@@ -16,7 +16,7 @@ module Mama11
       end
 
       def update(attributes)
-        teammates.changeset(:update, attributes).commit
+        teammates.by_pk(attributes[:id]).changeset(:update, attributes[:teammate]).commit
       end
 
       def remove(id)

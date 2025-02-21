@@ -15,7 +15,7 @@ module Mama11
 
         def handle(request, response)
           if request.params.valid?
-            teammate = teammate_repo.update(request.params[:teammate])
+            teammate = teammate_repo.update(request.params)
             response.redirect_to routes.path(:show_teammate, id: teammate[:id])
           end
         end

@@ -4,6 +4,7 @@ RSpec.feature "Teammate" do
   before do
     teammates = Hanami.app["relations.teammates"]
     teammates.insert(name: "Penelope Pitstop", id: 1)
+    teammates.insert(name: "Muttley", id: 2)
   end
 
   scenario "allows me to change the teammate's name" do
@@ -18,7 +19,17 @@ RSpec.feature "Teammate" do
     expect(page).to have_text "Penny Pitstop"
   end
 
-  scenario "allows me to remove the teammate"
+  scenario "allows me to remove the teammate" do
+    visit "/teammate/1"
+
+    expect(page).to have_text "Penelope Pitstop"
+
+    click_button "Remove Penelope Pitstop"
+
+    expect(page).to have_selector "li", count: 1
+    expect(page).to have_selector "li", text: "Muttley"    
+  end
+
   scenario "allows me to create meetings"
   scenario "allows me to select a meeting"
   scenario "allows me to set a sentiment for a meeting"

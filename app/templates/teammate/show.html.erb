@@ -1,3 +1,7 @@
 <h1><%= teammate[:name] %></h1>
 
 <a href="<%= routes.path(:edit_teammate, id: teammate[:id]) %>">Edit</a>
+
+<%= form_for(:teammate, routes.path(:remove_teammate, id: teammate[:id]), method: :delete) do |form| %>
+  <%= form.submit "Remove #{teammate[:name]}" %>
+<% end %>
