@@ -1,0 +1,15 @@
+---
+AllCops:
+  Include:
+  - "../**/config.ru"
+  - "../**/Gemfile"
+  - "../**/Rakefile"
+  Exclude:
+  # Ignored to make rails upgrades easier ⬇️
+  - ../bin/*
+  - ../config.ru
+  # Ignored to make rails upgrades easier ⬆️
+  - ../db/migrate/*
+  - ../karma_fixture.conf.rb
+  - ../node_modules/**/*
+  - ../.github/**/*

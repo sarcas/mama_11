@@ -1,0 +1,8 @@
+---
+inherit_mode:
+  merge:
+  - Exclude
+  - Include
+inherit_from:
+  - config/.rubocop-common.yml
+  - config/.rubocop-permissive.yml
