@@ -6,6 +6,14 @@ module Mama11
       def all
         teammates.order(teammates[:name].asc).to_a
       end
+
+      def create(attributes)
+        teammates.changeset(:create, attributes).commit
+      end
+
+      def remove(id)
+        teammates.by_pk(id).delete
+      end
     end
   end
 end

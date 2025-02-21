@@ -1,5 +1,12 @@
 <h1>Manager Management 1:1</h1>
 
-<% teammates.each do |teammate| %>
-  <li><%= teammate[:name] %></li>
-<% end %>
+<a href="<%= routes.path(:new_teammate) %>">Add Teammate</a>
+
+<ul id="teammates">
+  <% teammates.each do |teammate| %>
+    <li><%= teammate[:name] %></li>
+    <%= form_for(:teammate, routes.path(:remove_teammate, id: teammate[:id]), method: :delete) do |form| %>
+      <%= form.submit "Remove #{teammate[:name]}" %>
+    <% end %>
+  <% end %>
+</ul>

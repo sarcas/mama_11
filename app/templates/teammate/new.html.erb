@@ -1,0 +1,10 @@
+<h1>Add Teammate</h1>
+
+<%= form_for(:teammate, routes.path(:create_teammate)) do |form| %>
+  <p>
+    <%= form.label "Name", for: :name %>
+    <%= form.text_field :name %>
+  </p>
+
+  <%= form.submit "Add" %>
+<% end %>
