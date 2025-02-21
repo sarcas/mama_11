@@ -46,5 +46,13 @@ RSpec.feature "Home" do
     expect(page).to have_selector "li", text: "Penelope Pitstop"
   end
 
-  scenario "I can get to a teammate page from home"
+  scenario "I can get to a teammate page from home" do
+    visit "/"
+    
+    click_link "Penelope Pitstop"
+
+    expect(page).to have_text "Penelope Pitstop"
+    expect(page).not_to have_text "Muttley"
+  end
+
 end

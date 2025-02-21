@@ -4,7 +4,7 @@
 
 <ul id="teammates">
   <% teammates.each do |teammate| %>
-    <li><%= teammate[:name] %></li>
+    <li><a href="<%= routes.path(:show_teammate, id: teammate[:id]) %>"> <%= teammate[:name] %> </a> </li>
     <%= form_for(:teammate, routes.path(:remove_teammate, id: teammate[:id]), method: :delete) do |form| %>
       <%= form.submit "Remove #{teammate[:name]}" %>
     <% end %>
