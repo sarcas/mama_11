@@ -8,5 +8,7 @@ module Mama11
     post "/teammate", to: "teammate.create", as: :create_teammate
     delete "/teammate/:id", to: "teammate.destroy", as: :remove_teammate
     get "/teammate/:id", to: "teammate.show", as: :show_teammate
+    get "/teammate/:id/edit", to: "teammate.edit", as: :edit_teammate
+    patch "/teammate/:id", to: "teammate.update", as: :update_teammate
   end
 end

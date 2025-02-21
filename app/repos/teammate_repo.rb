@@ -15,6 +15,10 @@ module Mama11
         teammates.changeset(:create, attributes).commit
       end
 
+      def update(attributes)
+        teammates.changeset(:update, attributes).commit
+      end
+
       def remove(id)
         teammates.by_pk(id).delete
       end

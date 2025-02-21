@@ -1,0 +1,10 @@
+<h1><%= teammate[:name] %></h1>
+
+<%= form_for(:teammate, routes.path(:update_teammate, id: teammate[:id]), method: :patch) do |form| %>
+  <p>
+    <%= form.label "Name", for: :name %>
+    <%= form.text_field :name, value: teammate[:name] %>
+  </p>
+
+  <%= form.submit "Save" %>
+<% end %>
