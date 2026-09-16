@@ -30,6 +30,10 @@ This is a **Hanami 2.2** app (single app, no slices yet), following Hanami's con
 - **Migrations** — plain ROM::SQL migrations under `config/db/migrate/`, generated/run via `hanami db migrate`. `config/db/structure.sql` is the checked-in schema snapshot and should be regenerated (not hand-edited) whenever migrations change.
 - **Settings** — `config/settings.rb` defines app-wide settings using `Hanami::Settings` + `Types::Params`; types live in `lib/mama_11/types.rb`.
 
+## Git
+
+- Never run `git commit` (or `git push`) without explicit confirmation from the user for that specific commit, even if the work is complete, tests pass, or the user has authorized a broader multi-step task. Show the diff and ask before committing each time.
+
 ## Testing conventions
 
 - Specs mirror the `app/` structure under `spec/` (`spec/actions/...`, `spec/repos/...`).
