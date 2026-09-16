@@ -3,15 +3,15 @@
 ruby file: ".ruby-version"
 source "https://rubygems.org"
 
-gem "hanami", "~> 2.3.0"
-gem "hanami-assets", "~> 2.3.0"
-gem "hanami-controller", "~> 2.3.0"
-gem "hanami-db", "~> 2.3.0"
-gem "hanami-router", "~> 2.3.0"
-gem "hanami-validations", "~> 2.3.0"
-gem "hanami-view", "~> 2.3.0"
+gem "hanami", "~> 3.0"
+gem "hanami-action", "~> 3.0"
+gem "hanami-assets", "~> 3.0"
+gem "hanami-db", "~> 3.0"
+gem "hanami-router", "~> 3.0"
+gem "hanami-view", "~> 3.0"
 
 gem "dry-types", "~> 1.7"
+gem "dry-validation"
 gem "dry-operation"
 gem "puma"
 gem "rack", "~> 2.2"
@@ -25,7 +25,7 @@ gem "sqlite3"
 gem "tilt", "< 2.4"
 
 group :development do
-  gem "hanami-webconsole", "~> 2.3.0"
+  gem "hanami-webconsole", "~> 3.0"
 end
 
 group :development, :test do
@@ -33,11 +33,11 @@ group :development, :test do
 end
 
 group :cli, :development do
-  gem "hanami-reloader", "~> 2.3.0"
+  gem "hanami-reloader", "~> 3.0"
 end
 
 group :cli, :development, :test do
-  gem "hanami-rspec", "~> 2.3.0"
+  gem "hanami-rspec", "~> 3.0"
 end
 
 group :test do
